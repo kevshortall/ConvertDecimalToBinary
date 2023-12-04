@@ -18,15 +18,24 @@ public class ConvertDecimalToBinary {
     public static void main(String[] args) {
         
         Scanner in = new Scanner(System.in); //Scanner to read input from console
-         
-        System.out.println("Enter a whole number to convert to binary");//prompt user to enter a number
-      
+        
         String binaryResult = ""; //String which will hold the result
         
-        //TODO Should put some error checking in case  
         
-        int number = in.nextInt();//reads integer entered
+        int number = 0;
+        do{
+           try{
+               System.out.println("Enter a whole number to convert to binary");//prompt user to enter a number
+               number = Integer.parseInt(in.next());//reads integer entered 
            
+           }catch(Exception ex){
+                System.out.println("Invalid input. Enter a whole number to convert to binary");
+               
+           }
+          
+        }while(number < 1);
+        
+       
         //Loop until the binary number is found, dividing the starting number by 2 at the end loop
         while(number >= 0){
            
